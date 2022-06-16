@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Shopping';
+  public itemList=[];
+  
+  addItem(listOfItems){
+    this.itemList=listOfItems;
+  }
+  onDeleteButton(item){
+    const index = this.itemList.indexOf(item, 0);
+    this.itemList.splice(index, 1);
+  }
 }
